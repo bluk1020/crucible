@@ -8,3 +8,4 @@ def divide(a, b):
 def process_items(items):
     for i in range(len(items) + 1):
         print(items[i])
+# Three intentional bugs — let the swarm find them
