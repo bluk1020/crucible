@@ -9,13 +9,18 @@ jobs:
     name: Trigger AI Review Swarm
     runs-on: ubuntu-latest
     steps:
+      - name: Connect to Tailnet
+        uses: tailscale/github-action@v3
+        with:
+          authkey: ${{ secrets.TS_AUTHKEY }}
+
       - name: Dispatch to Donna
         run: |
-          curl -s -X POST "https://macmini.salmon-stonecat.ts.net/hooks/agent" \
+          curl -sf -X POST "https://macmini.salmon-stonecat.ts.net/hooks/agent" \
             -H "Authorization: Bearer ${{ secrets.HOOK_TOKEN }}" \
             -H "Content-Type: application/json" \
             -d "{
-              \"message\": \"Run code review on PR: ${{ github.event.pull_request.html_url }}\nRun this command and do nothing else: python3 ~/.openclaw/workspace/scripts/agent-monitor/code_review_rt.py --pr-url ${{ github.event.pull_request.html_url }}\",
+              \"message\": \"Run code review on this PR. Execute exactly: python3 ~/.openclaw/workspace/scripts/agent-monitor/code_review_rt.py --pr-url ${{ github.event.pull_request.html_url }}\",
               \"deliver\": false
             }"
           echo "✅ Review dispatched to AI swarm"
