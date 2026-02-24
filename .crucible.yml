@@ -1,0 +1,9 @@
+# Crucible config (optional overrides)
+review:
+  # Set to false to skip a reviewer
+  edge_cases: true
+  security: true
+  general: true
+
+  # Word limit per reviewer
+  max_words: 300
