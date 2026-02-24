@@ -19,7 +19,7 @@ Crucible is an AI-powered code review swarm. Open a PR and within seconds you ge
 
 ## Stack
 
-- **Edge Cases** — OpenRouter / GPT-5.2-Codex
+- **Edge Cases** — OpenRouter / Qwen3-Coder-Next
 - **Security** — Z.ai / GLM-5
 - **General** — MiniMax-M2.5
 - **Orchestration** — Donna (OpenClaw agent, Mac Mini)
