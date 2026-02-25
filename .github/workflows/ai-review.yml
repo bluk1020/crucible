@@ -16,7 +16,7 @@ jobs:
 
       - name: Dispatch to Donna
         run: |
-          curl -sf -X POST "https://macmini.salmon-stonecat.ts.net/hooks/agent" \
+          curl -sf -X POST "https://hooks.kellett.run/hooks/agent" \
             -H "Authorization: Bearer ${{ secrets.HOOK_TOKEN }}" \
             -H "Content-Type: application/json" \
             -d "{
